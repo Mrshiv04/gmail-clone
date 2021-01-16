@@ -1,0 +1,21 @@
+.login {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	background-color: #e7e7e7;
+}
+
+.login_container {
+	display: flex;
+	flex-direction: column;
+}
+
+.login_container > img {
+	object-fit: contain;
+	height: 400px;
+}
+
+.login_container > Button {
+	background-color: #498af2 !important;
+	color: white;
+}

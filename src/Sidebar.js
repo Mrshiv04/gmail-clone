@@ -13,13 +13,18 @@ import LabelImportantIcon from '@material-ui/icons/LabelImportant';
 import PersonIcon from '@material-ui/icons/Person';
 import DuoIcon from '@material-ui/icons/Duo';
 import PhoneIcon from '@material-ui/icons/Phone';
+import { useDispatch } from 'react-redux';
+import { openSendMessage } from './features/mailSlice';
 
 function Sidebar() {
+	const dispatch = useDispatch();
+
 	return (
 		<div className='sidebar'>
 			<Button
 				startIcon={<AddIcon fontSize='large' />}
 				className='sidebar_compose'
+				onClick={() => dispatch(openSendMessage())}
 			>
 				Compose
 			</Button>
@@ -29,11 +34,11 @@ function Sidebar() {
 				number={54}
 				selected={true}
 			/>
-			<SidebarOption Icon={StarIcon} title='Starred' number={54} />
-			<SidebarOption Icon={AccessTimeIcon} title='Snoozed' number={54} />
-			<SidebarOption Icon={SendIcon} title='Sent' number={54} />
+			<SidebarOption Icon={StarIcon} title='Starred' number={6} />
+			<SidebarOption Icon={AccessTimeIcon} title='Snoozed' number={2} />
+			<SidebarOption Icon={SendIcon} title='Sent' number={21} />
 			<SidebarOption Icon={LabelImportantIcon} title='Important' number={5} />
-			<SidebarOption Icon={InsertDriveFileIcon} title='Draft' number={21} />
+			<SidebarOption Icon={InsertDriveFileIcon} title='Draft' number={0} />
 			<SidebarOption Icon={ExpandMoreIcon} title='More' number='' />
 			<div className='sidebarOption_footer'>
 				<div className='sidebarFooter_icons'>
